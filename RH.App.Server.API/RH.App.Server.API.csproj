@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <nullable>enable</nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RH.App.Common\RH.App.Common.csproj" />
+    <ProjectReference Include="..\RH.App.Core.CronJob\RH.App.Core.CronJob.csproj" />
+    <ProjectReference Include="..\RH.App.Core.GraphQL\RH.App.Core.GraphQL.csproj" />
+    <ProjectReference Include="..\RH.App.Core\RH.App.Core.csproj" />
+    <ProjectReference Include="..\RH.App.Infrastructure\RH.App.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>
