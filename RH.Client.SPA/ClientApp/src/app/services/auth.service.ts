@@ -10,7 +10,7 @@ export class AuthService {
 
     private manager = new UserManager({
         authority: environment.identityUri,
-        client_id: 'angular_spa',
+        client_id: environment.clientId,
         redirect_uri: `${environment.uri}/auth/signin-callback`,
         post_logout_redirect_uri: `${environment.uri}/auth/signout-callback`,
         response_type: 'code',
@@ -28,7 +28,7 @@ export class AuthService {
         })
     }
 
-    login(newAccount?: boolean, userName?: string) {
+    public signin(newAccount?: boolean, userName?: string): Promise<void> {
         const extraQueryParams = newAccount && userName ? {
             newAccount: newAccount,
             userName: userName
@@ -37,6 +37,10 @@ export class AuthService {
         return this.manager.signinRedirect({
             extraQueryParams
         })
+    }
+
+    public signout(): Promise<void> {
+        return this.manager.signoutRedirect()
     }
 
     async signInComplete() {
@@ -56,15 +60,10 @@ export class AuthService {
     }
 
     get authorizationHeaderValue(): string {
-
         return this.user ? `${this.user.token_type} ${this.user.access_token}` : ''
     }
 
     get name(): string {
         return this.user != null ? this.user.profile.name : ''
-    }
-
-    async signout() {
-        await this.manager.signoutRedirect()
     }
 }

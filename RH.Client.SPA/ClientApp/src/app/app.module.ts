@@ -3,18 +3,17 @@ import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
+import { AppRoutingModule } from './app.routing'
+import { RootComponent } from './root.component'
 import { GraphQLModule } from './graphql.module'
-import { LayoutComponent } from './components/layout/layout.component'
-import { AuthGuard } from './guards/auth.guard'
-import { AuthInterceptor } from './services/auth.interceptor'
+import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component'
+import { AuthInterceptor } from './interceptors/auth.interceptor'
 
 @NgModule({
     declarations: [
-        AppComponent,
+        RootComponent,
 
-        LayoutComponent
+        DefaultLayoutComponent
     ],
     imports: [
         BrowserModule,
@@ -32,6 +31,6 @@ import { AuthInterceptor } from './services/auth.interceptor'
             multi: true
         }
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [RootComponent]
 })
 export class AppModule { }

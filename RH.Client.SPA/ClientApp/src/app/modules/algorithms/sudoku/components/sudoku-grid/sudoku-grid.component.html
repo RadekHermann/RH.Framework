@@ -1,0 +1,16 @@
+<mat-grid-list [cols]="9">
+    <mat-grid-tile *ngFor="let cell of cells" class="sudoku-cell">
+        <div fxFlex fxLayout="column" style="height: 100%; align-items: center; justify-content: center ;"
+            [class.cell-bottom]="cell.row % 3 === 0" [class.cell-top]="cell.row === 1"
+            [class.cell-left]="cell.col === 1" [class.cell-right]="cell.col % 3 === 0">
+            <div *ngIf="false">
+                <input class="sudoku-input helper-input" />
+            </div>
+            <div>
+                <input [(ngModel)]="cell.value" class="sudoku-input main-input" />
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<button (click)="solve()">Solve</button>

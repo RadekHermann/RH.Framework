@@ -1,0 +1,33 @@
+.sudoku-cell {
+    border: 1px solid black;
+}
+
+.cell-top {
+    border-top: 3px solid black;
+}
+
+.cell-bottom {
+    border-bottom: 3px solid black;
+}
+
+.cell-left {
+    border-left: 3px solid black;
+}
+
+.cell-right {
+    border-right: 3px solid black;
+}
+
+.sudoku-input {
+    width: 90%;
+    text-align: center;
+    border: none;
+
+    &.helper-input {
+        font-size: 10px;
+    }
+
+    &.main-input {
+        font-size: 25px;
+    }
+}

@@ -7,7 +7,9 @@ export const environment = {
 
     uri: 'http://localhost:5001',
     identityUri: 'http://localhost:5000',
-    apiUri: 'http://localhost:5002'
+    apiUri: 'http://localhost:5002',
+
+    clientId: 'angular_spa'
 }
 
 /*
